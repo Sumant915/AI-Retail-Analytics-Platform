@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Retail Analytics Platform</title>
+    <meta name="description" content="Premium AI retail analytics platform for Rossmann store sales forecasting." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="#top" class="brand">
+          <span class="brand-mark">
+            <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+              <path d="M12 46h40" />
+              <path d="M18 38l8-13 8 8 12-20" />
+              <circle cx="18" cy="38" r="3" />
+              <circle cx="26" cy="33" r="3" />
+              <circle cx="34" cy="41" r="3" />
+              <circle cx="46" cy="21" r="3" />
+            </svg>
+          </span>
+          <span>
+            <strong>AI Retail Analytics</strong>
+            <small>Enterprise forecasting</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <div id="backendStatus" class="backend-badge offline" role="status" aria-live="polite">
+            <span class="badge-dot"></span>
+            <span class="badge-label">Backend Offline</span>
+          </div>
+          <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#prediction">Live demo</a>
+            <a href="#about">About</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero container reveal">
+        <div class="hero-copy">
+          <span class="pill">AI-native retail intelligence</span>
+          <h1>Forecast demand with a premium predictive operating system.</h1>
+          <p>Turn store-level signals into strategic decisions with a refined forecasting experience built for modern retail teams.</p>
+          <div class="hero-actions">
+            <a href="#prediction" class="btn btn-primary">Launch live prediction</a>
+            <a href="#features" class="btn btn-secondary">Explore platform</a>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <strong>98.6%</strong>
+              <span>Forecast confidence</span>
+            </div>
+            <div>
+              <strong>24/7</strong>
+              <span>Model availability</span>
+            </div>
+            <div>
+              <strong>1-click</strong>
+              <span>Operational insights</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="dashboard-body">
+              <div class="chart-card large">
+                <p>Weekly Forecast</p>
+                <div class="bars">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="chart-card">
+                <p>Demand Pulse</p>
+                <div class="ring"><span>+12.4%</span></div>
+              </div>
+              <div class="chart-card">
+                <p>Model State</p>
+                <strong>Online • Active</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section container reveal">
+        <div class="section-heading">
+          <span class="eyebrow">Platform capabilities</span>
+          <h2>Purpose-built for modern retail operations.</h2>
+          <p>Every interaction feels fast, intelligent, and calm.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="glass-card">
+            <h3>Predictive precision</h3>
+            <p>Estimate sales scenarios with a trained XGBoost model tuned for retail demand shifts.</p>
+          </article>
+          <article class="glass-card">
+            <h3>Scenario planning</h3>
+            <p>Model promo impact, holidays, and dates in a single streamlined experience.</p>
+          </article>
+          <article class="glass-card">
+            <h3>Executive ready</h3>
+            <p>Present estimates in a polished interface that feels like a product, not a prototype.</p>
+          </article>
+          <article class="glass-card">
+            <h3>Developer friendly</h3>
+            <p>Clean architecture and a reliable API contract make integration effortless.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="section container reveal">
+        <div class="section-heading">
+          <span class="eyebrow">How it works</span>
+          <h2>From event input to retail insight in seconds.</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <span>01</span>
+            <h3>Capture context</h3>
+            <p>Enter the store, date, promo, and holiday signals that shape the forecast.</p>
+          </div>
+          <div class="step-card">
+            <span>02</span>
+            <h3>Run inference</h3>
+            <p>The request is sent to the live FastAPI endpoint and processed instantly.</p>
+          </div>
+          <div class="step-card">
+            <span>03</span>
+            <h3>Review forecast</h3>
+            <p>See a polished response that highlights the estimate with clarity.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="prediction" class="section container reveal">
+        <div class="section-heading">
+          <span class="eyebrow">Live prediction experience</span>
+          <h2>Interactive forecasting built into the product experience.</h2>
+        </div>
+
+        <div class="prediction-grid">
+          <div class="prediction-copy glass-card">
+            <h3>Launch the demo</h3>
+            <p>Use the live form to generate a prediction from the production-ready backend. The interface is responsive, validated, and designed to feel premium.</p>
+            <ul>
+              <li>Instant API feedback</li>
+              <li>Graceful loading states</li>
+              <li>Accessible validation messaging</li>
+            </ul>
+          </div>
+
+          <div class="panel-card">
+            <form id="predictionForm" novalidate>
+              <div class="field-group">
+                <label for="store">Store ID</label>
+                <input id="store" name="store" type="number" min="1" step="1" placeholder="e.g. 1" title="Enter a positive store identifier" />
+                <p class="field-help">Enter a positive store number for the location you want to forecast.</p>
+                <p class="field-error" data-error="store"></p>
+              </div>
+
+              <div class="field-group">
+                <label for="date">Prediction Date</label>
+                <input id="date" name="date" type="date" title="Choose the date for the prediction" />
+                <p class="field-help">Pick the date for which you want the sales estimate.</p>
+                <p class="field-error" data-error="date"></p>
+              </div>
+
+              <div class="field-grid">
+                <div class="field-group">
+                  <label for="promo">Promo</label>
+                  <select id="promo" name="promo" title="Choose whether a promotion is running">
+                    <option value="">Select</option>
+                    <option value="0">No Promotion (0)</option>
+                    <option value="1">Promotion Running (1)</option>
+                  </select>
+                  <p class="field-help">Choose whether the store is currently running a promotion.</p>
+                  <p class="field-error" data-error="promo"></p>
+                </div>
+
+                <div class="field-group">
+                  <label for="schoolHoliday">School Holiday</label>
+                  <select id="schoolHoliday" name="schoolHoliday" title="Choose whether a school holiday is active">
+                    <option value="">Select</option>
+                    <option value="0">No School Holiday (0)</option>
+                    <option value="1">School Holiday (1)</option>
+                  </select>
+                  <p class="field-help">Indicate whether the selected date falls during a school holiday.</p>
+                  <p class="field-error" data-error="schoolHoliday"></p>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="stateHoliday">State Holiday</label>
+                <select id="stateHoliday" name="stateHoliday" title="Choose the holiday type for the selected date">
+                  <option value="">Select</option>
+                  <option value="0">No State Holiday (0)</option>
+                  <option value="a">Public Holiday (a)</option>
+                  <option value="b">Easter Holiday (b)</option>
+                  <option value="c">Christmas Holiday (c)</option>
+                </select>
+                <p class="field-help">Select the holiday context that applies to this date.</p>
+                <p class="field-error" data-error="stateHoliday"></p>
+              </div>
+
+              <div class="button-row">
+                <button id="predictBtn" class="btn btn-primary" type="submit">
+                  <span class="btn-label">Predict Sales</span>
+                  <span id="spinner" class="spinner hidden" aria-hidden="true"></span>
+                </button>
+                <button id="resetBtn" class="btn btn-secondary" type="button">Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="result-section">
+          <div id="statusMessage" class="status-card hidden" role="status" aria-live="polite"></div>
+
+          <div id="resultCard" class="result-dashboard hidden">
+            <div class="result-main-card">
+              <div class="result-header">
+                <div>
+                  <p class="eyebrow">Prediction result</p>
+                  <h3>Estimated sales</h3>
+                </div>
+                <div class="result-badge">
+                  <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M5 12h14" />
+                    <path d="M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="result-top-row">
+                <div id="predictionAmount" class="prediction-amount">₹ 0.00</div>
+                <div class="success-pill">
+                  <span class="success-dot"></span>
+                  Prediction Completed Successfully
+                </div>
+              </div>
+
+              <div class="result-metrics">
+                <div class="metric-card">
+                  <span class="metric-label">Store ID</span>
+                  <strong id="resultStore">-</strong>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">Prediction Date</span>
+                  <strong id="resultDate">-</strong>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">Promotion</span>
+                  <strong id="resultPromo">-</strong>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">School Holiday</span>
+                  <strong id="resultSchoolHoliday">-</strong>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">State Holiday</span>
+                  <strong id="resultStateHoliday">-</strong>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">Backend Status</span>
+                  <strong id="resultBackendStatus">-</strong>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">API Response Time</span>
+                  <strong id="resultResponseTime">-</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="summary-card-group">
+              <div class="summary-heading">
+                <h4>Prediction Summary</h4>
+                <p>Executive-ready insight derived from the current forecast.</p>
+              </div>
+              <div class="summary-grid">
+                <div class="summary-card">
+                  <div class="summary-icon">📈</div>
+                  <div>
+                    <h4>Forecast Level</h4>
+                    <p id="summaryForecast">Awaiting prediction</p>
+                  </div>
+                </div>
+                <div class="summary-card">
+                  <div class="summary-icon">🎁</div>
+                  <div>
+                    <h4>Promotion Status</h4>
+                    <p id="summaryPromotion">Awaiting prediction</p>
+                  </div>
+                </div>
+                <div class="summary-card">
+                  <div class="summary-icon">🛰️</div>
+                  <div>
+                    <h4>Backend Status</h4>
+                    <p id="summaryBackend">Awaiting prediction</p>
+                  </div>
+                </div>
+                <div class="summary-card">
+                  <div class="summary-icon">⚡</div>
+                  <div>
+                    <h4>API Response Time</h4>
+                    <p id="summaryResponseTime">Awaiting prediction</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="recommendation-card">
+              <div class="recommendation-card-header">
+                <div class="recommendation-icon">🤖</div>
+                <div>
+                  <h4>AI Business Recommendation</h4>
+                  <p>Operational guidance tailored to the current forecast.</p>
+                </div>
+              </div>
+              <div class="recommendation-body">
+                <div class="recommendation-item">
+                  <span>Overall Demand Level</span>
+                  <strong id="insightDemand">Awaiting prediction</strong>
+                </div>
+                <div class="recommendation-item">
+                  <span>Promotion Analysis</span>
+                  <strong id="insightPromotion">Awaiting prediction</strong>
+                </div>
+                <div class="recommendation-item">
+                  <span>Holiday Impact</span>
+                  <strong id="insightHoliday">Awaiting prediction</strong>
+                </div>
+                <div class="recommendation-item">
+                  <span>Inventory Recommendation</span>
+                  <strong id="insightRecommendation">Awaiting prediction</strong>
+                </div>
+                <div class="recommendation-item full">
+                  <span>Business Recommendation</span>
+                  <strong id="insightBusiness">Awaiting prediction</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-row">
+              <button id="downloadPdfBtn" class="btn action-btn" type="button">
+                <span class="action-icon">📄</span>
+                <span>Download PDF</span>
+              </button>
+              <button id="downloadCsvBtn" class="btn action-btn" type="button">
+                <span class="action-icon">📊</span>
+                <span>Export CSV</span>
+              </button>
+              <button id="copyPredictionBtn" class="btn action-btn" type="button">
+                <span class="action-icon">📋</span>
+                <span>Copy Prediction</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="history-card">
+            <div class="history-header">
+              <h3>Prediction History</h3>
+              <p>Your last five forecasts are stored locally for quick reuse.</p>
+            </div>
+            <div id="historyList" class="history-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="model-info" class="section container reveal">
+        <div class="section-heading">
+          <span class="eyebrow">Model information</span>
+          <h2>A production-ready forecasting model with transparent metrics.</h2>
+        </div>
+        <div class="model-grid">
+          <article class="glass-card info-card">
+            <span class="card-icon">🧠</span>
+            <h3>Algorithm</h3>
+            <p>XGBoost Regressor</p>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">📐</span>
+            <h3>Prediction Type</h3>
+            <p>Regression</p>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">🏪</span>
+            <h3>Dataset</h3>
+            <p>Rossmann Store Sales</p>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">📚</span>
+            <h3>Training Records</h3>
+            <p>844K+</p>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">🧩</span>
+            <h3>Features</h3>
+            <p>23</p>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">🎯</span>
+            <h3>Target Variable</h3>
+            <p>Daily Sales</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="dataset-overview" class="section container reveal">
+        <div class="section-heading">
+          <span class="eyebrow">About the Rossmann Store Sales Dataset</span>
+          <h2>Built around a real retail forecasting benchmark with strong business relevance.</h2>
+        </div>
+        <div class="dataset-grid">
+          <article class="glass-card info-card">
+            <span class="card-icon">🏪</span>
+            <h3>What is Rossmann?</h3>
+            <p>Rossmann is one of Europe’s largest drugstore retail chains. The dataset was released as part of a Kaggle competition for forecasting daily sales.</p>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">📊</span>
+            <h3>Dataset Overview</h3>
+            <div class="stat-list">
+              <div><strong>Dataset</strong><span>Rossmann Store Sales</span></div>
+              <div><strong>Stores</strong><span>1115</span></div>
+              <div><strong>Historical Records</strong><span>~844,000</span></div>
+              <div><strong>Training Period</strong><span>Jan 2013 – Jul 2015</span></div>
+            </div>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">🧬</span>
+            <h3>Features Used</h3>
+            <div class="chip-list">
+              <span class="chip">Store</span>
+              <span class="chip">Promo</span>
+              <span class="chip">Promo2</span>
+              <span class="chip">School Holiday</span>
+              <span class="chip">State Holiday</span>
+              <span class="chip">Competition Distance</span>
+              <span class="chip">Competition Duration</span>
+              <span class="chip">Promo Duration</span>
+              <span class="chip">Store Type</span>
+              <span class="chip">Assortment</span>
+              <span class="chip">Season</span>
+              <span class="chip">Calendar Features</span>
+            </div>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">🔮</span>
+            <h3>Why can the model predict future dates?</h3>
+            <p>The original dataset contains historical sales only through 2015. This application creates engineered calendar and promotional features and applies historical relationships to estimate future performance.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container reveal">
+        <div class="section-heading">
+          <span class="eyebrow">Model limitations</span>
+          <h2>Forecasting is strategic support, not a guaranteed outcome.</h2>
+        </div>
+        <div class="single-card-grid">
+          <article class="glass-card info-card">
+            <span class="card-icon">⚠️</span>
+            <h3>Model Limitations</h3>
+            <p>The model is trained on historical Rossmann behavior. External influences such as inflation, policy changes, and major economic events are not included. Forecast accuracy depends on how similar future conditions are to past retail patterns.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container reveal">
+        <div class="section-heading">
+          <span class="eyebrow">Why XGBoost?</span>
+          <h2>Excellent balance of performance, speed, and interpretability.</h2>
+        </div>
+        <div class="dataset-grid">
+          <article class="glass-card info-card">
+            <span class="card-icon">⚡</span>
+            <h3>Excellent performance</h3>
+            <p>Strong results on tabular retail datasets with structured business signals.</p>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">🌐</span>
+            <h3>Captures nonlinear patterns</h3>
+            <p>Handles complex interactions between promotions, calendars, and store context.</p>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">🧹</span>
+            <h3>Handles missing values</h3>
+            <p>Robust to incomplete business features common in retail data.</p>
+          </article>
+          <article class="glass-card info-card">
+            <span class="card-icon">🚀</span>
+            <h3>Fast inference</h3>
+            <p>Delivers quick predictions suitable for interactive dashboards and demos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="technology" class="section container reveal">
+        <div class="section-heading">
+          <span class="eyebrow">Technology stack</span>
+          <h2>Built with a modern, lightweight stack.</h2>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-card glass-card">
+            <span class="stack-icon">🐍</span>
+            <strong>Python</strong>
+          </div>
+          <div class="stack-card glass-card">
+            <span class="stack-icon">⚡</span>
+            <strong>FastAPI</strong>
+          </div>
+          <div class="stack-card glass-card">
+            <span class="stack-icon">🌲</span>
+            <strong>XGBoost</strong>
+          </div>
+          <div class="stack-card glass-card">
+            <span class="stack-icon">📊</span>
+            <strong>Pandas</strong>
+          </div>
+          <div class="stack-card glass-card">
+            <span class="stack-icon">🔢</span>
+            <strong>NumPy</strong>
+          </div>
+          <div class="stack-card glass-card">
+            <span class="stack-icon">🧩</span>
+            <strong>HTML5</strong>
+          </div>
+          <div class="stack-card glass-card">
+            <span class="stack-icon">🎨</span>
+            <strong>CSS3</strong>
+          </div>
+          <div class="stack-card glass-card">
+            <span class="stack-icon">⚙️</span>
+            <strong>JavaScript</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="architecture" class="section container reveal">
+        <div class="section-heading">
+          <span class="eyebrow">Project workflow</span>
+          <h2>A polished machine learning workflow from data to decision.</h2>
+        </div>
+        <div class="pipeline-flow">
+          <div class="pipeline-step"><span>📚</span> Rossmann Dataset</div>
+          <div class="pipeline-arrow">↓</div>
+          <div class="pipeline-step"><span>🧹</span> Data Cleaning</div>
+          <div class="pipeline-arrow">↓</div>
+          <div class="pipeline-step"><span>📈</span> EDA</div>
+          <div class="pipeline-arrow">↓</div>
+          <div class="pipeline-step"><span>🛠️</span> Feature Engineering</div>
+          <div class="pipeline-arrow">↓</div>
+          <div class="pipeline-step"><span>🏋️</span> Model Training</div>
+          <div class="pipeline-arrow">↓</div>
+          <div class="pipeline-step"><span>🌲</span> XGBoost Regression</div>
+          <div class="pipeline-arrow">↓</div>
+          <div class="pipeline-step"><span>📦</span> Model Serialization</div>
+          <div class="pipeline-arrow">↓</div>
+          <div class="pipeline-step"><span>⚡</span> FastAPI Backend</div>
+          <div class="pipeline-arrow">↓</div>
+          <div class="pipeline-step"><span>🖥️</span> Frontend Dashboard</div>
+          <div class="pipeline-arrow">↓</div>
+          <div class="pipeline-step"><span>🎯</span> Sales Prediction</div>
+        </div>
+      </section>
+
+      <section id="about" class="section container reveal">
+        <div class="developer-card">
+          <div class="avatar-wrap">
+            <div class="avatar" aria-hidden="true">SS</div>
+          </div>
+          <div class="developer-content">
+            <span class="eyebrow">About the developer</span>
+            <h2>Sumantra Singh</h2>
+            <p class="developer-role">B.Tech Artificial Intelligence &amp; Machine Learning Student</p>
+            <p>College: LNCT Bhopal</p>
+            <p>Career Goal: Aspiring Machine Learning Engineer building practical AI systems for forecasting, analytics, and intelligent product experiences.</p>
+            <div class="skills-list">
+              <span>Python</span>
+              <span>Machine Learning</span>
+              <span>FastAPI</span>
+              <span>XGBoost</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>SQL</span>
+              <span>Power BI</span>
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-list">
+              <strong>Projects</strong>
+              <ul>
+                <li>AI Retail Analytics Platform</li>
+                <li>Rossmann Sales Prediction</li>
+                <li>Bank Loan Risk Analysis</li>
+                <li>Sleep Health Dashboard</li>
+                <li>Superstore Sales Dashboard</li>
+              </ul>
+            </div>
+            <div class="social-links">
+              <a class="btn btn-social" href="https://github.com/Sumant915" target="_blank" rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.3-4.3-2.5-6-3m12 6v-3.9a3.2 3.2 0 0 0-.9-2.5c3-.3 6.2-1.5 6.2-6.9a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.7s-1.2-.4-3.9 1.5a13.5 13.5 0 0 0-7 0C6.3 1.4 5.1 1.8 5.1 1.8a5 5 0 0 0-.1 3.7 5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.2 6.6 6.2 6.9a3.2 3.2 0 0 0-.9 2.5V21" /></svg>
+                GitHub
+              </a>
+              <a class="btn btn-social" href="https://www.linkedin.com/in/sumantra-singh-a85956317?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 0 6.94 5.4a1.56 1.56 0 0 0 0 3.1ZM5.5 9.5h2.88V18H5.5zM10.3 9.5h2.76v1.2h.04c.38-.72 1.32-1.48 2.72-1.48 2.9 0 3.44 1.9 3.44 4.38V18H16.3v-7.5h-2.76v.96h-.04c-.4-.75-1.32-1.54-2.72-1.54-2.9 0-3.44 1.9-3.44 4.38V18H10.3z" /></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>AI Retail Analytics Platform</strong>
+          <p>Machine Learning Powered Retail Forecasting</p>
+        </div>
+        <div class="footer-links">
+          <span>Dataset: Rossmann Store Sales</span>
+          <span>Built With: Python • FastAPI • XGBoost • HTML5 • CSS3 • JavaScript</span>
+          <a href="https://github.com/Sumant915" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>Copyright © 2026 Sumantra Singh</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
