@@ -33,7 +33,9 @@ loadingMessage.setAttribute("aria-live", "polite");
 statusMessage.parentNode.insertBefore(loadingMessage, statusMessage.nextSibling);
 
 const HISTORY_STORAGE_KEY = "retail-prediction-history";
-const API_BASE_URLS = ["http://127.0.0.1:8001", "http://127.0.0.1:8000"];
+const API_BASE_URLS = [
+  "https://ai-retail-analytics-api.onrender.com"
+];
 const loadingMessages = [
   "Loading model...",
   "Generating features...",
